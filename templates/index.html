@@ -1,0 +1,43 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <p style="text-align: center;">{{ message }}</p>
+    <h2>Shopping List</h2>
+    <form action="/" method="post">
+        <input name="shopping-list-item" maxlength="15" type="text" placeholder="Add Item Here" id="new-item-input" autofocus="on" autocomplete="off"/>
+    </form>
+    {% if flag %}
+    <div id="main-content">
+        <form id="table-form" action="/" method="post">
+            <table id="shopping-list-table">
+                <tr id="top-row" class="table-row">
+                    <th class="item-th">Item</th>
+                    <th>&#10003;</th>
+                    <th>Remove</th>
+                </tr>
+            {% for item in shopping_list %}
+                {% if item[3] == 1 %}
+                <tr class="table-row">
+                    <td class="list-item-td" id="list-item-{{ item[0] }}">{{ item[1] }}</td>
+                    <td id="checkbox-home" class="checkbox-td">
+                        {% if item[2] == 0 %}
+                            <input onclick="submitTable()" name="checkbox-{{ item[0] }}" type="checkbox" class="checkbox">
+                        {% else %}
+                            <input onclick="submitTable()" name="checkbox-{{ item[0] }}" type="checkbox" class="checkbox" checked>
+                        {% endif %}
+                    </td>
+                    <td class="delete-button" class="delete-td">
+                        <input class="deletebox" onclick="submitTable()" name="deletebox-{{ item[0] }}" type="checkbox"/>
+                    </td>                 
+                </tr>
+                {% endif %}
+            {% endfor %}
+            </table>
+        </form>
+        <div id="save-button-container">
+            <button onclick="removeAll()">Start Over</button>
+        </div>
+        {% else %}
+        <p>No list yet</p>
+        {% endif %}
+{% endblock %}

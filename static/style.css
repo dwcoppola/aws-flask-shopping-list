@@ -1,0 +1,62 @@
+body
+{
+    background-color: #BC986A;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+}
+#new-item-input 
+{
+    margin-bottom: 1em;
+}
+table
+{
+    text-align: left;
+    background-color: #FBEEC1;
+    width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+}
+table, tr
+{
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding-right: 1em;
+}
+th
+{
+    text-align: center;
+}
+th.item-th
+{
+    text-align: left;
+    padding-left: 1em;
+}
+.list-item-td
+{
+    padding-left: 1em;
+}
+.delete-button, .checkbox-td
+{
+    width: 65px;
+    text-align: center;
+}
+#save-button-container
+{
+    text-align: center;
+    padding: .5em;
+    border: 1px solid black;
+    border-top: none;
+    background-color: #FBEEC1;
+    width: 302px;
+    margin-left: auto;
+    margin-right: auto;
+}
+button
+{
+    margin-left: 1em;
+    background-color: #8D8741;
+    color: #FBEEC1;
+    border-style: solid;
+    border-color: #DAAD86;
+    height: 30px;
+}
