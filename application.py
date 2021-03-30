@@ -78,9 +78,9 @@ class ListItem:
 
 # application / views
 
-app = Flask(__name__)
+application = Flask(__name__)
 
-@app.route("/", methods=["GET", "POST"])
+@application.route("/", methods=["GET", "POST"])
 def index():
     shopping_list = ListItem.all()[::-1]
     flag = True if ListItem.active() != [] else False
