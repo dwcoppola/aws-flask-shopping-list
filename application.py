@@ -11,13 +11,11 @@ def run_sql(command):
     with c.connection:
         return c.execute(command)
 
-run_sql(
-    '''CREATE TABLE IF NOT EXISTS "shopping_list" (
+run_sql('''CREATE TABLE IF NOT EXISTS "shopping_list" (
         "id" integer NOT NULL PRIMARY KEY AUTOINCREMENT,
         "item_name" varchar(15) UNIQUE NOT NULL,
         "acquired" bool NOT NULL,
-        "on_list" bool NOT NULL,
-    );''')
+        "on_list" bool NOT NULL);''')
 
 # objects
 
